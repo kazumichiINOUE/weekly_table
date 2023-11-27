@@ -1,14 +1,27 @@
 use std::env;
 use chrono::{NaiveDate, Datelike, Duration};
+use clap::{App, Arg};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
         panic!("ERR:引数がひとつ必要です");
     }
+    // コマンドライン引数の定義
+    let matches = App::new("Create weekly link table")
+        .version("1.0")
+        .author("Kazumichi INOUE")
+        .about("Create a table of weekly links.")
+        .arg(
+            Arg::with_name("start date of sunday")
+                .index(1)
+                .required(true) // ここで引数を必須に設定
+                .help("Sets the start date directly after --"),
+        )
+        .get_matches();
 
     // 引数を日付としてパース
-    let arg1 = &args[1];
+    let arg1 = matches.value_of("start date of sunday").unwrap();
     match NaiveDate::parse_from_str(arg1, "%Y-%m-%d") {
         Ok(parsed_date) => {
             // パース成功時の処理
