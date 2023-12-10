@@ -35,13 +35,13 @@ fn main() {
             let fri = sun + Duration::days(5);
             let sat = sun + Duration::days(6);
 
-            let sun_date_link = format!("{}{}{}", sun.year() % 100, sun.month0() + 1, sun.day());
-            let mon_date_link = format!("{}{}{}", mon.year() % 100, mon.month0() + 1, mon.day());
-            let tue_date_link = format!("{}{}{}", tue.year() % 100, tue.month0() + 1, tue.day());
-            let wed_date_link = format!("{}{}{}", wed.year() % 100, wed.month0() + 1, wed.day());
-            let thu_date_link = format!("{}{}{}", thu.year() % 100, thu.month0() + 1, thu.day());
-            let fri_date_link = format!("{}{}{}", fri.year() % 100, fri.month0() + 1, fri.day());
-            let sat_date_link = format!("{}{}{}", sat.year() % 100, sat.month0() + 1, sat.day());
+            let sun_date_link = format!("{}{:02}{:02}", sun.year() % 100, sun.month0() + 1, sun.day());
+            let mon_date_link = format!("{}{:02}{:02}", mon.year() % 100, mon.month0() + 1, mon.day());
+            let tue_date_link = format!("{}{:02}{:02}", tue.year() % 100, tue.month0() + 1, tue.day());
+            let wed_date_link = format!("{}{:02}{:02}", wed.year() % 100, wed.month0() + 1, wed.day());
+            let thu_date_link = format!("{}{:02}{:02}", thu.year() % 100, thu.month0() + 1, thu.day());
+            let fri_date_link = format!("{}{:02}{:02}", fri.year() % 100, fri.month0() + 1, fri.day());
+            let sat_date_link = format!("{}{:02}{:02}", sat.year() % 100, sat.month0() + 1, sat.day());
 
             println!("|Sun|Mon|Tue|Wed|Thu|Fri|Sat|\n|---|---|---|---|---|---|---|");
             println!("|[{}]({})|[{}]({})|[{}]({})|[{}]({})|[{}]({})|[{}]({})|[{}]({})|",
